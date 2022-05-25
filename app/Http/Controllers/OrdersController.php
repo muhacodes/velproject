@@ -14,7 +14,22 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $data = Orders::all();
+        return view('home', compact('data'));
+    }
+
+    public function approve(Request $request){
+        $orders = Orders::find($request->id);
+        $orders->status = 'approved';
+
+        $orders->save();
+    }
+
+    public function reject(Request $request){
+        $orders = Orders::find($request->id);
+        $orders->status = 'rejected';
+
+        $orders->save();
     }
 
     /**

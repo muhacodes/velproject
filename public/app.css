@@ -1,0 +1,21 @@
+
+
+.approved{
+    background-color: green !important;;
+    color: white !important;;
+    font-weight: bolder !important;;
+} 
+
+.rejected{
+    background-color: red !important;;
+    color: white;
+    font-weight: bolder;
+}
+table th{
+    border: 1px solid rgb(24, 17, 17);
+    font-size: 20px;
+}
+
+table td{
+    border: 1px solid gray;
+}

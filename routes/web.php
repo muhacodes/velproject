@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/', 'OrdersController@index')->name('index');
+
+Route::get('/approve/{id}/', 'OrdersController@approve')->name('approve');
+
+Route::get('/reject/{id}/', 'OrdersController@reject')->name('reject');

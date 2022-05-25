@@ -19,7 +19,9 @@ class CreateOrdersTable extends Migration
             $table->string('customer');
             $table->string('address');
             $table->integer('amount');
-            $table->string('status');
+            $table->integer('Item');
+            $table->integer('agent');
+            $table->string('status')->defualt('pending');
             $table->timestamps();
         });
     }
