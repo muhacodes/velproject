@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Orders;
 use Illuminate\Http\Request;
+use Auth;
 
 class OrdersController extends Controller
 {
@@ -15,7 +16,7 @@ class OrdersController extends Controller
     public function index()
     {
         $data = Orders::all();
-        return view('home', compact('data'));
+        return view('orders', compact('data'));
     }
 
     public function approve(Request $request){
@@ -30,6 +31,11 @@ class OrdersController extends Controller
         $orders->status = 'rejected';
 
         $orders->save();
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->route('home');
     }
 
     /**

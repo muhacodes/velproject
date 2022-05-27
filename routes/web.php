@@ -13,13 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/home', 'OrdersController@index')->name('home');
+
+    Route::get('/approve/{id}/', 'OrdersController@approve')->name('approve');
+    
+    Route::get('/reject/{id}/', 'OrdersController@reject')->name('reject');
+
+    Route::get('/user/logout/', 'OrdersController@logout')->name('reject');
+
 });
 
 
-Route::get('/', 'OrdersController@index')->name('index');
 
-Route::get('/approve/{id}/', 'OrdersController@approve')->name('approve');
-
-Route::get('/reject/{id}/', 'OrdersController@reject')->name('reject');
+// Route::get('/home', 'HomeController@index')->name('home');
