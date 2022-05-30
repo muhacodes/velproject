@@ -10,7 +10,7 @@ $(document).ready(function(){
 function approve(){
    $('.approve').click(function(){
     var id = $(this).data('id');
-    alert(id);
+    // alert(id);
 
     $.ajax({
         url: '/approve/'+id+' ',
@@ -29,7 +29,7 @@ function approve(){
 function reject(){
     $('.reject').click(function(){
      var id = $(this).data('id');
-     alert(id);
+    //  alert(id);
  
      $.ajax({
          url: '/reject/'+id+' ',
