@@ -20,13 +20,16 @@
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">OrderNumber</th>
-        <th scope="col"> Customer </th>
-        <th scope="col"> Address </th>
-        <th scope="col"> Amount </th>
-        <th scope="col"> item </th>
-        <th scope="col"> Agent </th>
-        <th scope="col"> Status </th>
+        <th scope="col">Jobcard No</th>
+        <th scope="col"> Customer Name </th>
+        <th scope="col"> Description </th>
+        <th scope="col"> Quantity </th>
+        <th scope="col"> Price </th>
+        <th scope="col"> Actual Price </th>
+        <th scope="col"> Price Difference </th>
+        <th scope="col"> Total Difference </th>
+        <th scope="col"> Approved </th>
+        
         <th> Action </th>
         </tr>
     </thead>
@@ -35,13 +38,16 @@
         @if($data->status == "approved")
         <tr class="approved">
             <td scope="row"> {{ $loop->index+1 }} </td>
-            <td> {{ $data->order_id }} </td>
-            <td> {{ $data->customer }} </td>
-            <td> {{ $data->address }} </td>
-            <td> {{ $data->amount }} </td>
-            <td> {{ $data->Item }} </td>
-            <td> {{ $data->agent }} </td>
-            <td> {{ $data->status }} </td>
+            <td> {{ $data->job_card_no }} </td>
+            <td> {{ $data->customer_name }} </td>
+            <td> {{ $data->description }} </td>
+            <td> {{ $data->quantity }} </td>
+            <td> {{ $data->price }} </td>
+            <td> {{ $data->actual_amount }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->total_difference }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->is_approved }} </td>
             <td> 
                 <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
                 <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
@@ -49,14 +55,17 @@
         </tr>
         @elseif($data->status == "rejected")
         <tr class="rejected">
-            <td scope="row"> {{ $loop->index+1 }} </td>
-            <td> {{ $data->order_id }} </td>
-            <td> {{ $data->customer }} </td>
-            <td> {{ $data->address }} </td>
-            <td> {{ $data->amount }} </td>
-            <td> {{ $data->Item }} </td>
-            <td> {{ $data->agent }} </td>
-            <td> {{ $data->status }} </td>
+        <td scope="row"> {{ $loop->index+1 }} </td>
+            <td> {{ $data->job_card_no }} </td>
+            <td> {{ $data->customer_name }} </td>
+            <td> {{ $data->description }} </td>
+            <td> {{ $data->quantity }} </td>
+            <td> {{ $data->price }} </td>
+            <td> {{ $data->actual_amount }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->total_difference }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->is_approved }} </td>
             <td> 
                 <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
                 <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
@@ -65,13 +74,16 @@
         @else
         <tr>
             <td scope="row"> {{ $loop->index+1 }} </td>
-            <td> {{ $data->order_id }} </td>
-            <td> {{ $data->customer }} </td>
-            <td> {{ $data->address }} </td>
-            <td> {{ $data->amount }} </td>
-            <td> {{ $data->Item }} </td>
-            <td> {{ $data->agent }} </td>
-            <td> {{ $data->status }} </td>
+            <td> {{ $data->job_card_no }} </td>
+            <td> {{ $data->customer_name }} </td>
+            <td> {{ $data->description }} </td>
+            <td> {{ $data->quantity }} </td>
+            <td> {{ $data->price }} </td>
+            <td> {{ $data->actual_amount }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->total_difference }} </td>
+            <td> {{ $data->price_difference }} </td>
+            <td> {{ $data->is_approved }} </td>
             <td> 
                 <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
                 <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
