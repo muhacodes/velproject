@@ -10,14 +10,10 @@
     
 
 #mytable{
-    table-layout: fixed !important;
     /* background-color: hotpink; */
 }    
 
 .mytable{
-    table-layout: fixed !important;
-    margin: 5px auto;
-    height: 500px;
     display: table !important;
 }
 
