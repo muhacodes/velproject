@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Approve;
 use Illuminate\Http\Request;
-use Auth;
+use auth;
+use Carbon\Carbon;
 
 class ApproveController extends Controller
 {
@@ -15,21 +16,28 @@ class ApproveController extends Controller
      */
     public function index()
     {
-        $data = Approve::orderBy('customer_name', 'ASC', 'created_at')->get();
+        $today = Carbon::today();
+        $data = Approve::orderBy('customer_name', 'ASC', 'created_at')
+                                    ->where('created_at', '>=', $today)
+                                    ->get();
         return view('approve', compact('data'));
     }
 
     public function approve(Request $request){
-        $orders = Approve::find($request->id);
-        $orders->is_approved = "approved";
+        $userId = Auth::user();
+        $approve = Approve::find($request->id);
+        $approve->is_approved = "approved";
+        $approve->user_id = $userId;
+
 
         $orders->save();
     }
 
     public function reject(Request $request){
-        $orders = Approve::find($request->id);
-        $orders->is_approved = "rejected";
-
+        $userId = Auth::user();
+        $approve = Approve::find($request->id);
+        $approve->is_approved = "rejected";
+        $approve->user_id = $userId;
         $orders->save();
     }
 

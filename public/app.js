@@ -18,11 +18,11 @@ function approve(){
         dataType: 'json',
         success: function (response) {
             var msg = response.message
-            // alert(msg);
+            location.reload(true);
 
         }
     });
-    location.reload();
+    location.reload(true);
    });
 }
 
@@ -38,9 +38,10 @@ function reject(){
          success: function (response) {
              var msg = response.message
             //  alert(msg);
+            location.reload(true)
  
          }
      });
-     location.reload();
+     location.reload(true);
     });
  }

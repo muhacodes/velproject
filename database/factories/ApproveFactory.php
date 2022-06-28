@@ -8,6 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Approve::class, function (Faker $faker) {
     return [
         'job_card_no' => $faker->randomDigit(1,100),
+        'branch_name' => $faker->name,
         'customer_name' => $faker->name,
         'description' => $faker->text(50),
         'quantity' => $faker->randomDigit(1,20),

@@ -4,8 +4,8 @@
 }
 
 #container{
-    width: 90%;
-    margin: 10px auto;
+    width: 100%;
+    margin: 1px auto !important;
 }
     
 
@@ -16,6 +16,7 @@
 
 .mytable{
     /* display: table !important; */
+    width: 100% !important;
 }
 
 .approved{
@@ -33,11 +34,11 @@
 table th{
     border: 1px solid gray !important;
     font-size: 20px;
-    /* position: sticky !important; */
-    /* z-index: 1 !important; */
-    /* top: 0 !important; */
-    /* background-color: black; */
-    /* color: white; */
+    /* position: sticky !important;
+    z-index: 1 !important;  
+    top: 0 !important;
+    background-color: black;
+    color: white; */
 }
 
 table td{

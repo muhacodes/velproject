@@ -16,6 +16,7 @@ class CreateApprovesTable extends Migration
         Schema::create('approves', function (Blueprint $table) {
             $table->id();
             $table->integer('job_card_no');
+            $table->string('branch_name');
             $table->string('customer_name');
             $table->string('description', 2000);
             $table->integer('quantity');
