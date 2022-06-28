@@ -18,7 +18,7 @@ function approve(){
         dataType: 'json',
         success: function (response) {
             var msg = response.message;
-            location.reload(true);
+            // location.reload(true);
             // alert(msg);
 
         }
@@ -38,7 +38,7 @@ function reject(){
          dataType: 'json',
          success: function (response) {
              var msg = response.message;
-             location.reload(true);
+            //  location.reload(true);
             //  alert(msg);
  
          }
