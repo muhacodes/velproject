@@ -16,7 +16,7 @@
 <div id="container" class="container-fluid">
     <h2 class="text-center"> Mandela | City Tyres  </h2>
     <a href="/user/logout" class="btn btn-warning text-primary "> Logout </a>
-    <table id="mytable" class="table mytable table-responsive ">
+    <table id="mytable" class="table  table-responsive ">
     <thead>
         <tr>
         <th scope="col">#</th>

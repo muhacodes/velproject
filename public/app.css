@@ -11,10 +11,11 @@
 
 #mytable{
     /* background-color: hotpink; */
+    /* display: table !important; */
 }    
 
 .mytable{
-    display: table !important;
+    /* display: table !important; */
 }
 
 .approved{
@@ -32,11 +33,11 @@
 table th{
     border: 1px solid gray !important;
     font-size: 20px;
-    position: sticky !important;
+    /* position: sticky !important; */
     /* z-index: 1 !important; */
-    top: 0 !important;
-    background-color: black;
-    color: white;
+    /* top: 0 !important; */
+    /* background-color: black; */
+    /* color: white; */
 }
 
 table td{
