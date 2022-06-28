@@ -19,15 +19,21 @@ Auth::routes();
 // });
 
 
+Route::get('/', function(){
+    return redirect()->route('home');
+});
+
+
 Route::middleware('auth')->group(function () {
 
-    Route::get('/home', 'OrdersController@index')->name('home');
 
-    Route::get('/approve/{id}/', 'OrdersController@approve')->name('approve');
+    Route::get('/home', 'ApproveController@index')->name('home');
+
+    Route::get('/approve/{id}/', 'ApproveController@approve')->name('approve');
     
-    Route::get('/reject/{id}/', 'OrdersController@reject')->name('reject');
+    Route::get('/reject/{id}/', 'ApproveController@reject')->name('reject');
 
-    Route::get('/user/logout/', 'OrdersController@logout')->name('reject');
+    Route::get('/user/logout/', 'ApproveController@logout')->name('reject');
 
 });
 

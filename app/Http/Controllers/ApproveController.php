@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Approve;
 use Illuminate\Http\Request;
+use Auth;
 
 class ApproveController extends Controller
 {
@@ -14,7 +15,27 @@ class ApproveController extends Controller
      */
     public function index()
     {
-        //
+        $data = Approve::all();
+        return view('approve', compact('data'));
+    }
+
+    public function approve(Request $request){
+        $orders = Approve::find($request->id);
+        $orders->is_approved = "approved";
+
+        $orders->save();
+    }
+
+    public function reject(Request $request){
+        $orders = Approve::find($request->id);
+        $orders->is_approved = "rejected";
+
+        $orders->save();
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->route('home');
     }
 
     /**
@@ -41,10 +62,10 @@ class ApproveController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Approve  $approve
+     * @param  \App\Approve  $orders
      * @return \Illuminate\Http\Response
      */
-    public function show(Approve $approve)
+    public function show(Approve $orders)
     {
         //
     }
@@ -52,10 +73,10 @@ class ApproveController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Approve  $approve
+     * @param  \App\Approve  $orders
      * @return \Illuminate\Http\Response
      */
-    public function edit(Approve $approve)
+    public function edit(Approve $orders)
     {
         //
     }
@@ -64,10 +85,10 @@ class ApproveController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Approve  $approve
+     * @param  \App\Approve  $orders
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Approve $approve)
+    public function update(Request $request, Approve $orders)
     {
         //
     }
@@ -75,10 +96,10 @@ class ApproveController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Approve  $approve
+     * @param  \App\Approve  $orders
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Approve $approve)
+    public function destroy(Approve $orders)
     {
         //
     }

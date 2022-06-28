@@ -23,7 +23,7 @@ class CreateApprovesTable extends Migration
             $table->integer('actual_amount');
             $table->integer('price_difference');
             $table->integer('total_difference');
-            $table->boolean('is_approved')->nullable();
+            $table->string('is_approved')->nullable();
             $table->integer('user_id')->nullable()->unsigned();
             $table->timestamps();
         });
