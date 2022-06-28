@@ -15,7 +15,7 @@ class ApproveController extends Controller
      */
     public function index()
     {
-        $data = Approve::all();
+        $data = Approve::orderBy('customer_name', 'ASC', 'created_at')->get();
         return view('approve', compact('data'));
     }
 

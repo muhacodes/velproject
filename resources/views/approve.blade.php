@@ -13,14 +13,14 @@
 
 <body>
 
-<div class="container">
-    <h2 class="text-center"> Mandela | CJs  </h2>
-    <a href="/user/logout" class="btn btn-default text-primary "> Logout </a>
-    <table id="mytable" class="table table-responsive ">
+<div id="container" class="container-fluid">
+    <h2 class="text-center"> Mandela | City Tyres  </h2>
+    <a href="/user/logout" class="btn btn-warning text-primary "> Logout </a>
+    <table id="mytable" class="table mytable table-responsive ">
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col" width="5px">Jobcard No</th>
+        <th scope="col">Jobcard No</th>
         <th scope="col"> Customer Name </th>
         <th scope="col"> Description </th>
         <th scope="col"> Quantity </th>
@@ -94,11 +94,13 @@
 
 
 <script src="/jquery/jquery.js"> </script>
-<script src="/app.js"> </script>
 <script src="////cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script src="/app.js"> </script>
 <script>
     $(document).ready( function () {
-    $('#mytable').DataTable();
+    $('#mytable').DataTable(
+        // "ordering": false
+    );
 } );
 </script>
 </body>

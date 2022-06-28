@@ -1,9 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 
+#container{
+    width: 90%;
+    margin: 10px auto;
+}
     
 
 #mytable{
     table-layout: fixed !important;
+    /* background-color: hotpink; */
 }    
+
+.mytable{
+    table-layout: fixed !important;
+    margin: 5px auto;
+    height: 500px;
+    display: table !important;
+}
 
 .approved{
     background-color: green !important;;
@@ -18,12 +34,17 @@
 }
 
 table th{
-    border: 1px solid rgb(24, 17, 17);
+    border: 1px solid gray !important;
     font-size: 20px;
+    position: sticky !important;
+    /* z-index: 1 !important; */
+    top: 0 !important;
+    background-color: black;
+    color: white;
 }
 
 table td{
     border: 1px solid gray;
     word-wrap: break-word !important;
-    width: 3px !important;
+    
 }
