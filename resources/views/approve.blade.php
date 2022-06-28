@@ -47,7 +47,7 @@
             <td> {{ $data->actual_amount }} </td>
             <td> {{ $data->price_difference }} </td>
             <td> {{ $data->total_difference }} </td>
-            <td> {{ $data->is_approved }}, by {{ $data->user_id }} </td>
+            <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} </td>
             <td> 
                 <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
                 <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
@@ -65,7 +65,7 @@
             <td> {{ $data->actual_amount }} </td>
             <td> {{ $data->price_difference }} </td>
             <td> {{ $data->total_difference }} </td>
-            <td> {{ $data->is_approved }}, by {{ $data->user_id }} </td>
+            <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} </td>
             <td> 
                 <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
                 <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>

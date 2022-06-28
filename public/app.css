@@ -22,13 +22,13 @@
 .approved{
     background-color: green !important;;
     color: white !important;;
-    font-weight: bolder !important;;
+    /* font-weight: bolder !important;; */
 } 
 
 .rejected{
     background-color: red !important;;
     color: white;
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 table th{

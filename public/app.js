@@ -17,8 +17,8 @@ function approve(){
 
         dataType: 'json',
         success: function (response) {
-            var msg = response.message
-            location.reload(true);
+            var msg = response.message;
+            // alert(msg);
 
         }
     });
@@ -36,9 +36,8 @@ function reject(){
  
          dataType: 'json',
          success: function (response) {
-             var msg = response.message
+             var msg = response.message;
             //  alert(msg);
-            location.reload(true)
  
          }
      });

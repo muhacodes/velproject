@@ -16,6 +16,7 @@ class ApproveController extends Controller
      */
     public function index()
     {
+        
         $today = Carbon::today();
         $data = Approve::orderBy('customer_name', 'ASC', 'created_at')
                                     ->where('created_at', '>=', $today)
@@ -24,21 +25,20 @@ class ApproveController extends Controller
     }
 
     public function approve(Request $request){
-        $userId = Auth::user();
+        $user_id = Auth::user()->id;
         $approve = Approve::find($request->id);
         $approve->is_approved = "approved";
-        $approve->user_id = $userId;
+        $approve->user_id = $user_id;
 
-
-        $orders->save();
+        $approve->save();
     }
 
     public function reject(Request $request){
-        $userId = Auth::user();
+        $user_id = Auth::user()->id;
         $approve = Approve::find($request->id);
         $approve->is_approved = "rejected";
-        $approve->user_id = $userId;
-        $orders->save();
+        $approve->user_id = $user_id;
+        $approve->save();
     }
 
     public function logout(Request $request){
