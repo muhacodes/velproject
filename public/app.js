@@ -3,9 +3,17 @@ $(document).ready(function(){
 
     approve();
     reject();
+    PreventSorting();
 
 });
 
+function PreventSorting(){
+    // alert('hey');
+    $("#mytable th").click(function( event ) {
+        event.stopPropagation();
+        // Do something
+      });
+};
 
 function approve(){
    $('.approve').click(function(){

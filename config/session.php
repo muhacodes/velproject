@@ -155,6 +155,8 @@ return [
 
     'domain' => env('SESSION_DOMAIN', null),
 
+    "lifetime" => 120,
+
     /*
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
