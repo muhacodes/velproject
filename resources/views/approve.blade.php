@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title> PosJobCard </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 
 <link href="/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/css/all.min.css" integrity="sha512-NicFTMUg/LwBeG8C7VG+gC4YiiRtQACl98QdkmfsLy37RzXdkaUAuPyVMND0olPP4Jn8M/ctesGSB2pgUBDRIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 <link rel="stylesheet" href="////cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css" />
 <link href="/app.css" rel="stylesheet">
 </head>
@@ -16,6 +17,13 @@
 <div id="container" class="container-fluid">
     <h2 class="text-center"> PosJobCard  </h2>
     <a href="/user/logout" class="btn btn-warning text-primary "> Logout </a>
+    <div>
+        <select>
+            <option> Pending </option>
+            <option> Approved </option>
+            <option> Rejected </option>
+        </select>
+    </div>
     <table id="mytable" class="table  table-responsive ">
     <thead>
         <tr>
