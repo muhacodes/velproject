@@ -21,7 +21,9 @@
     <div id="filter" class="row">
         <div class="col-md-6">
             <form method="get" action="{{ route('jobcard-all') }}">
+            <!-- <button> Home </button> -->
             <h3 style="display: inline;"> Filter </h3>
+            <input value="{{ request()->get('date') }}" type="date" name="date" />
             <select name="filter">
                 @if(request()->get('filter'))
                 <option value="{{ request()->get('filter') }}"> {{ request()->get('filter') }} </option>
@@ -31,7 +33,7 @@
                 <option vlaue="Approved"> Approved </option>
                 <option value="Rejected"> Rejected </option>
             </select>
-            <button type="submit"> Search </button>
+            <button class="btn btn-sm btn-success" type="submit"> Search </button>
             </form>
         </div>
     </div>
