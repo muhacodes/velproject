@@ -4,7 +4,7 @@
 }
 
 #container{
-    width: 100%;
+    width: 100% !important;
     margin: 1px auto !important;
 }
     
@@ -38,7 +38,7 @@ table th:hover{
 
 table th{
     border: 1px solid gray !important;
-    font-size: 20px;
+    font-size: 1.2em;
     pointer-events: none !important;
     /* position: sticky !important;
     z-index: 1 !important;  
@@ -50,5 +50,6 @@ table th{
 table td{
     border: 1px solid gray;
     word-wrap: break-word !important;
+    font-size: 0.8em
     
 }

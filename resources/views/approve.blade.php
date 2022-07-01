@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> Orders </title>
+<title> PosJobCard </title>
 
 <link href="/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/css/all.min.css" integrity="sha512-NicFTMUg/LwBeG8C7VG+gC4YiiRtQACl98QdkmfsLy37RzXdkaUAuPyVMND0olPP4Jn8M/ctesGSB2pgUBDRIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
 <body>
 
 <div id="container" class="container-fluid">
-    <h2 class="text-center"> Mandela | City Tyres  </h2>
+    <h2 class="text-center"> PosJobCard  </h2>
     <a href="/user/logout" class="btn btn-warning text-primary "> Logout </a>
     <table id="mytable" class="table  table-responsive ">
     <thead>

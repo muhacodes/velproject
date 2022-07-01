@@ -20,6 +20,7 @@ class ApproveController extends Controller
         $today = Carbon::today();
         $data = Approve::orderBy('created_at', 'DESC')
                                     ->where('created_at', '>=', $today)
+                                    ->where('is_approved', '=', 'pending')
                                     ->get();
         return view('approve', compact('data'));
     }
