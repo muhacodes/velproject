@@ -118,13 +118,24 @@ class ApproveController extends Controller
     {
         $filter =  $request->filter;
         $date =  $request->date;
+        $all = $request->all;
+        $today = Carbon::today();
 
-        // return $date;
-        // $today = Carbon::today();
-        $data = Approve::orderBy('created_at', 'DESC')
-                                    ->where('is_approved', '=', $filter)
-                                    ->whereDate('created_at', '=',  $date)
-                                    ->get();
+
+        if($date){
+            if($filter == "all"){
+                $data = Approve::orderBy('created_at', 'DESC')->whereDate('created_at', '=',  $date)->get();
+            }else{
+
+                $data = Approve::orderBy('created_at', 'DESC')->where('is_approved', '=', $filter)->whereDate('created_at', '=',  $date)->get();
+            }
+        }else{
+            if($filter == "all"){
+                $data = Approve::orderBy('created_at', 'DESC')->whereDate('created_at', '>=',  $today)->get();
+            }else{
+                $data = Approve::orderBy('created_at', 'DESC')->where('is_approved', '=', $filter)->whereDate('created_at', '>=',  $today)->get();
+            }
+        }
 
         return view('approve', compact('data'));
     }

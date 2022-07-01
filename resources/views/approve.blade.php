@@ -28,12 +28,13 @@
                     <option value="{{ request()->get('filter') }}"> {{ request()->get('filter') }} </option>
                     @endif
                     <option value="pending"> --- </option>
+                    <option value="all"> All </option>
                     <option value="pending"> Pending </option>
                     <option vlaue="Approved"> Approved </option>
                     <option value="Rejected"> Rejected </option>
                 </select>
-                <button class="btn btn-sm btn-success" type="submit"> Search </button> |
-                <a href="{{ route('home') }}" class="btn btn-info"> Home </a>
+                <button class="btn btn-sm btn-success" type="submit"> Filter </button> |
+                <a href="{{ route('home') }}" class="btn btn-info"> Today </a>
 
             </form>
         </div>
