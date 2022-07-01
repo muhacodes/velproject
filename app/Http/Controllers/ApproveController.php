@@ -22,6 +22,7 @@ class ApproveController extends Controller
                                     ->where('created_at', '>=', $today)
                                     ->where('is_approved', '=', 'pending')
                                     ->get();
+
         return view('approve', compact('data'));
     }
 
@@ -111,5 +112,17 @@ class ApproveController extends Controller
     public function destroy(Approve $orders)
     {
         //
+    }
+
+    public function all(Request $request)
+    {
+        $filter =  $request->filter;
+        $today = Carbon::today();
+        $data = Approve::orderBy('created_at', 'DESC')
+                                    ->where('created_at', '>=', $today)
+                                    ->where('is_approved', '=', $filter)
+                                    ->get();
+
+        return view('approve', compact('data'));
     }
 }

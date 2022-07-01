@@ -17,12 +17,23 @@
 <div id="container" class="container-fluid">
     <h2 class="text-center"> PosJobCard  </h2>
     <a href="/user/logout" class="btn btn-warning text-primary "> Logout </a>
-    <div>
-        <select>
-            <option> Pending </option>
-            <option> Approved </option>
-            <option> Rejected </option>
-        </select>
+    
+    <div id="filter" class="row">
+        <div class="col-md-6">
+            <form method="get" action="{{ route('jobcard-all') }}">
+            <h3 style="display: inline;"> Filter </h3>
+            <select name="filter">
+                @if(request()->get('filter'))
+                <option value="{{ request()->get('filter') }}"> {{ request()->get('filter') }} </option>
+                @endif
+                <option value="pending"> --- </option>
+                <option value="pending"> Pending </option>
+                <option vlaue="Approved"> Approved </option>
+                <option value="Rejected"> Rejected </option>
+            </select>
+            <button type="submit"> Search </button>
+            </form>
+        </div>
     </div>
     <table id="mytable" class="table  table-responsive ">
     <thead>

@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/logout/', 'ApproveController@logout')->name('reject');
 
-    Route::get('/jobcard/all', 'ApproveController@all')->name('jobcard-all');
+    Route::get('/jobcard', 'ApproveController@all')->name('jobcard-all');
 
 });
 
