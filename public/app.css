@@ -15,7 +15,6 @@
 }    
 
 
-
 .mytable{
     /* display: table !important; */
     width: 100% !important;
@@ -38,7 +37,7 @@ table th:hover{
 
 table th{
     border: 1px solid gray !important;
-    font-size: 1.2em;
+    font-size: 1em;
     pointer-events: none !important;
     /* position: sticky !important;
     z-index: 1 !important;  
