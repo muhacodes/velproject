@@ -74,8 +74,8 @@
             <td> {{ $data->total_difference }} </td>
             <td> {{ $data->created_at }} </td>
             <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} on {{ $data->updated_at }} </td>
-            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
-            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
+            <td> <a data-id="{{ $data->id }}" class=" approve text-white btn btn-success "> Approve </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject text-white  btn btn-danger"> Reject </a></td>
         </tr>
         @elseif($data->is_approved == "rejected")
         <tr class="rejected">
@@ -91,8 +91,8 @@
             <td> {{ $data->total_difference }} </td>
             <td> {{ $data->created_at }} </td>
             <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} on {{ $data->updated_at }} </td>
-            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
-            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
+            <td> <a data-id="{{ $data->id }}" class=" approve text-white btn btn-success "> Approve </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject text-white  btn btn-danger"> Reject </a></td>
         </tr>
         @else
         <tr>
@@ -108,8 +108,8 @@
             <td> {{ $data->total_difference }} </td>
             <td> {{ $data->created_at }} </td>
             <td> {{ $data->created_at }} </td>
-            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
-            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
+            <td> <a data-id="{{ $data->id }}" class=" approve text-white btn btn-success "> Approve </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject text-white  btn btn-danger"> Reject </a></td>
         </tr>
         @endif
         @endforeach()
