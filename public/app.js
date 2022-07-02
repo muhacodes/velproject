@@ -16,6 +16,7 @@ function PreventSorting(){
 };
 
 function approve(){
+    
    $('.approve').click(function(){
     var id = $(this).data('id');
     // alert(id);
@@ -24,14 +25,13 @@ function approve(){
         url: '/approve/'+id+' ',
 
         dataType: 'json',
-        success: function (response) {
-            var msg = response.message;
-            // location.reload(true);
-            // alert(msg);
-
-        }
+        success: function (res) {
+            alert('jobcard '+res.jobcard+' succesfully approved  ');
+            location.reload(true);
+            return false;
+        },
     });
-    location.reload(true);
+    
    });
 }
 
@@ -41,16 +41,15 @@ function reject(){
     //  alert(id);
  
      $.ajax({
-         url: '/reject/'+id+' ',
+        url: '/reject/'+id+' ',
  
-         dataType: 'json',
-         success: function (response) {
-             var msg = response.message;
-            //  location.reload(true);
-            //  alert(msg);
- 
-         }
+        dataType: 'json',
+        success: function (res) {
+            alert('jobcard '+res.jobcard+' succesfully rejected  ');
+            location.reload(true);
+            return false;
+        },
      });
-     location.reload(true);
+     
     });
  }

@@ -52,8 +52,10 @@
         <th scope="col"> Actual Price </th>
         <th scope="col"> Price Difference </th>
         <th scope="col"> Total Difference </th>
+        <th scope="col"> Date </th>
         <th scope="col"> Status </th>
-        <th> Action </th>
+        <th> Approve </th>
+        <th> Reject </th>
         </tr>
     </thead>
     <tbody>
@@ -70,11 +72,10 @@
             <td> {{ $data->actual_amount }} </td>
             <td> {{ $data->price_difference }} </td>
             <td> {{ $data->total_difference }} </td>
-            <td> <strong>{{ $data->created_at }}</strong> -  by {{ $data->user['name'] }} </td>
-            <td> 
-                <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
-                <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
-            </td>
+            <td> {{ $data->created_at }} </td>
+            <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} on {{ $data->updated_at }} </td>
+            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
         </tr>
         @elseif($data->is_approved == "rejected")
         <tr class="rejected">
@@ -88,11 +89,10 @@
             <td> {{ $data->actual_amount }} </td>
             <td> {{ $data->price_difference }} </td>
             <td> {{ $data->total_difference }} </td>
-            <td> <strong>{{ $data->created_at }}</strong> -  by {{ $data->user['name'] }} </td>
-            <td> 
-                <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
-                <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
-            </td>
+            <td> {{ $data->created_at }} </td>
+            <td> <strong>{{ $data->is_approved }}</strong> -  by {{ $data->user['name'] }} on {{ $data->updated_at }} </td>
+            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
         </tr>
         @else
         <tr>
@@ -107,10 +107,9 @@
             <td> {{ $data->price_difference }} </td>
             <td> {{ $data->total_difference }} </td>
             <td> {{ $data->created_at }} </td>
-            <td> 
-                <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-2x fas fa-check"></i> </a> 
-                <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-2x fas fa-window-close"></i> </a>
-            </td>
+            <td> {{ $data->created_at }} </td>
+            <td> <a data-id="{{ $data->id }}" class=" approve "> <i class="fa-3x fas fa-check"></i> </a> </td>
+            <td> <a data-id="{{ $data->id }}" class=" reject "> <i class="fa-3x fas fa-window-close"></i> </a></td>
         </tr>
         @endif
         @endforeach()

@@ -20,6 +20,7 @@
 }    
 
 
+
 .mytable{
     /* display: table !important; */
     width: 100% !important;
@@ -57,3 +58,9 @@ table td{
     font-size: 0.8em
     
 }
+
+.confirmbuttons{
+    width: 250px;
+    overflow: hidden;
+}
+

@@ -6,6 +6,7 @@ use App\Approve;
 use Illuminate\Http\Request;
 use auth;
 use Carbon\Carbon;
+use Response;
 
 class ApproveController extends Controller
 {
@@ -33,6 +34,7 @@ class ApproveController extends Controller
         $approve->user_id = $user_id;
 
         $approve->save();
+        return response()->json(['message' => 'success', 'jobcard' => $approve->job_card_no]);
     }
 
     public function reject(Request $request){
@@ -40,7 +42,9 @@ class ApproveController extends Controller
         $approve = Approve::find($request->id);
         $approve->is_approved = "rejected";
         $approve->user_id = $user_id;
+
         $approve->save();
+        return response()->json(['message' => 'success', 'jobcard' => $approve->job_card_no]);
     }
 
     public function logout(Request $request){
